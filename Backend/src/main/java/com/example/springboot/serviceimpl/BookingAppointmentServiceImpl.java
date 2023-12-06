@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.springboot.exception.AppointmentNotValidException;
-import com.example.springboot.exception.ReceptionistNotFoundException;
 import com.example.springboot.exception.ResourceNotFoundException;
 import com.example.springboot.model.BookingAppointment;
 import com.example.springboot.model.Doctor;
@@ -64,8 +63,7 @@ public class BookingAppointmentServiceImpl implements BookingAppointmentService 
 		
 		
 		bookingAppointment.setDoctor(doctor);
-//		System.out.println("doctor"+doctor);
-//		System.out.println("bookingappointment"+bookingAppointment);
+
 		
 		return bookingAppointmentRepository.save(bookingAppointment);
 	

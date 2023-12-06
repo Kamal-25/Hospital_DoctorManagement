@@ -4,8 +4,6 @@ import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.validation.ConstraintViolationException;
-
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +19,7 @@ import com.example.springboot.exception.AppointmentNotValidException;
 import com.example.springboot.exception.IdMismatchException;
 import com.example.springboot.exception.PaymentNotValidException;
 import com.example.springboot.exception.PrescriptionNotValidException;
-import com.example.springboot.exception.ReceptionistNotFoundException;
 import com.example.springboot.exception.ResourceNotFoundException;
-import com.example.springboot.exception.RoomDuplicateException;
 
 @ControllerAdvice
 public class ValidationHandler extends ResponseEntityExceptionHandler{
@@ -55,11 +51,7 @@ public class ValidationHandler extends ResponseEntityExceptionHandler{
 		
 	}
 	
-	@ExceptionHandler(ReceptionistNotFoundException.class) 
-	public ResponseEntity<String>
-	  handleReceptionistNotFoundException(ReceptionistNotFoundException ex) {
-	  return new
-	  ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_REQUEST); }
+
 	
 	@ExceptionHandler(AppointmentNotValidException.class) 
 	public ResponseEntity<String>
@@ -79,15 +71,6 @@ public class ValidationHandler extends ResponseEntityExceptionHandler{
 	  return new
 	  ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_REQUEST); }
 
-	@ExceptionHandler(RoomDuplicateException.class) 
-	public ResponseEntity<String>
-	  handleRoomDuplicateException(RoomDuplicateException ex) {
-	  return new
-	  ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_REQUEST); }
-	@ExceptionHandler(PaymentNotValidException.class)
-	public ResponseEntity<String>
-	  handlePaymentNotValidException(PaymentNotValidException ex) {
-	  return new
-	  ResponseEntity<String>(ex.getMessage(),HttpStatus.BAD_REQUEST); }
+
 	
 }

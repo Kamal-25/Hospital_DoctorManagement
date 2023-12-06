@@ -31,11 +31,6 @@ public class PrescriptionController {
 	@Autowired
 	private PrescriptionService prescriptionService;
 
-	//	@PostMapping("/register")
-//	public ResponseEntity<Prescription> savePrescription(@RequestBody Prescription prescription){
-//		System.out.println(" Registration Succesfull "+prescription);
-//		return new ResponseEntity<Prescription>(prescriptionService.savePrescription(prescription),HttpStatus.CREATED);
-//	}
 	//delete by id
 	@DeleteMapping("{PriscriptionId}")
 

@@ -16,13 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.springboot.model.Admin;
 import com.example.springboot.model.Doctor;
-import com.example.springboot.model.Receptionist;
-import com.example.springboot.model.Room;
 import com.example.springboot.service.AdminService;
 import com.example.springboot.service.DoctorService;
-import com.example.springboot.service.ReceptionistService;
-import com.example.springboot.service.RoomService;
- 
+
 
 @CrossOrigin(origins="http://localhost:4200")
 
@@ -40,11 +36,9 @@ public class AdminController {
 	@Autowired
 	private DoctorService doctorService;
 	
-	@Autowired
-	private ReceptionistService receptionistService;
+
  	
-	@Autowired
-	private RoomService roomService;
+
 	
 	@PostMapping("/register")
 	public ResponseEntity<Admin> saveAdmin(@RequestBody Admin admin){
@@ -116,75 +110,15 @@ public class AdminController {
 			
 		}
 		
-		@PostMapping("/register/receptionist")
-		public ResponseEntity<Receptionist> saveReceptionist(@RequestBody Receptionist receptionist){
-			System.out.println("Receptionist Registration Succesfull "+receptionist);
-			return new ResponseEntity<Receptionist>(receptionistService.saveReceptionist(receptionist),HttpStatus.CREATED);
-		}
+
 		
-		//get all receptionist details
-		@GetMapping("/receptionist")
-		public List<Receptionist> getAllReceptionists(){
-			return receptionistService.getAllReceptionists();
-		}
+
 		
-		//get receptionist by id
-		@GetMapping("/receptionist/{receptionistId}")
-		public ResponseEntity<Receptionist> getReceptionistById(@PathVariable("receptionistId") long receptionistId){
-			
-			return new ResponseEntity<Receptionist>(receptionistService.getReceptionistById(receptionistId),HttpStatus.OK);
-		}
-		//updating reeptionist details
-		@PutMapping("/receptionist/{receptionistId}")
-		public ResponseEntity<Receptionist> updateReceptionist(@PathVariable("receptionistId") long receptionistId, @RequestBody Receptionist receptionist) {
-		
-			return new ResponseEntity<Receptionist>(receptionistService.updateReceptionist(receptionist,receptionistId),HttpStatus.OK);
-		}
-		//delete by id
-		@DeleteMapping("/receptionist/{receptionistId}")
-		public ResponseEntity<Boolean> deleteReceptionist(@PathVariable("receptionistId") long receptionistId){
-			receptionistService.deleteReceptionist(receptionistId);
-			boolean flag = true;
-			return new ResponseEntity<Boolean>(flag, HttpStatus.OK);
-			
-		}
+
 		
 		
 		 
-		
-		//adding room 
-		
-		@PostMapping("/room/register")
-		public ResponseEntity<Room> addRoom(@RequestBody Room room){
-			System.out.println("Room Added Succesfully "+room);
-			return new ResponseEntity<Room>(roomService.addRoom(room),HttpStatus.CREATED);
-		}
-		
-		@GetMapping("/room")
-		public List<Room> getAllRooms(){
-			return roomService.getAllRooms();
-		}
-		
-		//get room by id
-		@GetMapping("/room/{roomId}")
-		public ResponseEntity<Room> getRoomById(@PathVariable("roomId") long roomId){
-			
-			return new ResponseEntity<Room>(roomService.getRoomById(roomId),HttpStatus.OK);
-		}
-		//updating room details
-		@PutMapping("/room/{roomId}")
-		public ResponseEntity<Room> updateRoom(@PathVariable("roomId") long roomId, @RequestBody Room room ) {
-		
-			return new ResponseEntity<Room>(roomService.updateRoom(room,roomId),HttpStatus.OK);
-		}
-		//delete by id
-		@DeleteMapping("/room/{roomId}")
-		public ResponseEntity<String> deleteRoom(@PathVariable("roomId") long roomId){
-			roomService.deleteRoom(roomId);
-			String message = "Room Details Deleted from Database ";
-			return new ResponseEntity<String>(message, HttpStatus.OK);
-			
-		}
+
 		
 		
 		

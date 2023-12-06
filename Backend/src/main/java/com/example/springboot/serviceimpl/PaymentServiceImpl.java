@@ -14,14 +14,12 @@ import com.example.springboot.exception.ResourceNotFoundException;
 import com.example.springboot.model.Patient;
 import com.example.springboot.model.Payment;
 import com.example.springboot.model.Prescription;
-import com.example.springboot.model.Room;
 import com.example.springboot.repository.PatientRepository;
 import com.example.springboot.repository.PaymentRepository;
 import com.example.springboot.repository.PrescriptionRepository;
 import com.example.springboot.service.PatientService;
 import com.example.springboot.service.PaymentService;
 import com.example.springboot.service.PrescriptionService;
-import com.example.springboot.service.RoomService;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {
@@ -35,11 +33,7 @@ public class PaymentServiceImpl implements PaymentService {
 	@Autowired
 	private PatientService patientService;
 
-//	@Autowired
-//	private RoomRepository roomRepository;
 
-	@Autowired
-	private RoomService roomService;
 
 	@Autowired
 	private PrescriptionRepository prescriptionRepository;
@@ -59,7 +53,7 @@ public class PaymentServiceImpl implements PaymentService {
 			payment.setPaymentDate(date);
 			payment.setPrescriptionId(gettingPrescription.getPrescriptionId());
 			payment.setAdmitDate(date);
-			payment.setRoomId(1);
+
 			payment.setPatient(patient);
 			patient.setDischargeDate(date);
 			patient.setPaymentStatus(payment.getPaymentStatus());
