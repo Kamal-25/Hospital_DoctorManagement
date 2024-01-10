@@ -12,7 +12,7 @@ import javax.persistence.Tuple;
 public class HospitalManagementSystemApplication {
 
 	public static void main(String[] args) {
-	ConfigurableApplicationContext iqbal= SpringApplication.run(HospitalManagementSystemApplication.class, args);
+	ConfigurableApplicationContext kamal= SpringApplication.run(HospitalManagementSystemApplication.class, args);
 
 
 		System.out.println("Hospital is working");

@@ -49,8 +49,8 @@ public class Admin {
 	
 	@Column(name="passWord")
 	@NotEmpty
-	@Size(min=8, message="Password length must be 8 and contain uppercase,lowercase,digits")
-	@Pattern(regexp="(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+	@Size(min=6, message="Password length must be 8 and contain uppercase,lowercase,digits")
+
 	public String adminPassword;
 	
 	@Column(name="age")

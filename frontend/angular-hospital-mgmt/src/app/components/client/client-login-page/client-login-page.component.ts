@@ -24,7 +24,7 @@ export class ClientLoginPageComponent implements OnInit {
     const pattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; 
     this.clientLoginForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern(pattern)]],
-      password: [null, Validators.compose([Validators.required, Validators.minLength(8)])]
+      password: [null, Validators.compose([Validators.required, Validators.minLength(6)])]
     });
 
   }

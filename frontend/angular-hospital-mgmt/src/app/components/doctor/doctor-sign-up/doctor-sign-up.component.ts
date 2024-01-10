@@ -53,7 +53,7 @@ export class DoctorSignUpComponent implements OnInit {
       return;
     }
 
-    if (this.phone === '' || this.phone.length < 10 || this.phone.length > 10) {
+    if (this.phone === '' || this.phone.length < 11 || this.phone.length > 11) {
       alert('Phone must contain atleast 10 characters');
       return;
     }
