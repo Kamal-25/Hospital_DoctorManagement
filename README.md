@@ -1,6 +1,6 @@
-# Hospital_DoctorManagement
+# Hospital_DoctorManagement 
 # Overview: 
-A Hospital Management System is a comprehensive platform designed to streamline various aspects of healthcare administration, allowing for efficient management of hospital resources, patient information.
+A Hospital Management System is a comprehensive platform designed to streamline various aspects of healthcare administration, allowing for efficient management of hospital resources, patient information.The Doctor Appointment and Patient Registration Web is a helpful tool for making healthcare easier for both doctors and patients. It helps you easily schedule appointments, register as a patient and doctor , and communicate smoothly with your doctor.
 # Key Features: 
 Real-time patient status tracking enables healthcare providers to monitor the progress and current condition of patients, ensuring timely and accurate medical care. This feature enhances the overall patient experience, promotes transparency in healthcare delivery, and facilitates effective communication between medical staff and patients.
 
