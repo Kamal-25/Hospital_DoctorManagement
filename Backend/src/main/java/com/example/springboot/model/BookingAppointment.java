@@ -22,11 +22,16 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Objects;
+
 @Entity
 @Table(name="booking_appointment")
 @Data
 @SequenceGenerator( name="booking",sequenceName="booking_gene",initialValue=5000)
 public class BookingAppointment {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="booking")
 	@Column(name="appointment_id")
@@ -61,6 +66,7 @@ public class BookingAppointment {
 	}
 
 	public long getPatientId() {
+
 		return patientId;
 	}
 
